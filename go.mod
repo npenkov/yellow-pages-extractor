@@ -1,5 +1,7 @@
 module github.com/npenkov/yellow-pages-extractor
 
-go 1.13
+go 1.24.0
 
-require golang.org/x/net v0.0.0-20190921015927-1a5e07d1ff72
+toolchain go1.24.7
+
+require golang.org/x/net v0.46.0
