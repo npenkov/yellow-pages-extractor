@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -45,7 +44,7 @@ func (this *YellowPages) FetchNextPage(addFunc func([]model.Contact)) (bool, err
 		return false, fmt.Errorf("Error fetching from url %s : %v", nextPage, err)
 	}
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return false, fmt.Errorf("Error reading response from %s : %v", nextPage, err)
 	}
